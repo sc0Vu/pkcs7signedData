@@ -24,6 +24,8 @@ PKCS#7 signedData library for php.
 
 [Go pkcs7](https://godoc.org/github.com/fullsailor/pkcs7)
 
+[PKCS7 OID](http://www.alvestrand.no/objectid/1.2.840.113549.1.7.html)
+
 # Licence
 
 MIT
