@@ -25,6 +25,11 @@ PKCS#7 signedData library for php.
 
     DigestAlgorithmIdentifier ::= AlgorithmIdentifier
 
+    AlgorithmIdentifier  ::=  SEQUENCE  {
+        algorithm               OBJECT IDENTIFIER,
+        parameters              ANY DEFINED BY algorithm OPTIONAL
+    }
+
 ### contentInfo
 
     ContentInfo ::= SEQUENCE {
@@ -78,6 +83,8 @@ PKCS#7 signedData library for php.
 [RFC2315](https://www.ietf.org/rfc/rfc2315.txt)
 
 [RFC5652](https://tools.ietf.org/html/rfc5652#section-5.3)
+
+[RFC5280](https://tools.ietf.org/html/rfc5280#section-4.1.1.2)
 
 [PKIGlobe](http://www.pkiglobe.org/pkcs7.html)
 
