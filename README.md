@@ -48,6 +48,24 @@ PKCS#7 signedData library for php.
         extendedCertificate [0] IMPLICIT ExtendedCertificate
     }
 
+    ExtendedCertificate ::= SEQUENCE {
+        extendedCertificateInfo ExtendedCertificateInfo,
+        signatureAlgorithm SignatureAlgorithmIdentifier,
+        signature Signature 
+    }
+
+    SignatureAlgorithmIdentifier ::= AlgorithmIdentifier
+
+    Signature ::= BIT STRING
+
+    ExtendedCertificateInfo ::= SEQUENCE {
+        version CMSVersion,
+        certificate Certificate,
+        attributes UnauthAttributes 
+    }
+
+    UnauthAttributes ::= SET SIZE (1..MAX) OF Attribute
+
 ### crls
 
     Set of CertificateRevocationList
