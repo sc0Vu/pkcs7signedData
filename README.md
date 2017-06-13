@@ -77,6 +77,27 @@ PKCS#7 signedData library for php.
 
     Set of CertificateRevocationList
 
+    CertificateRevocationList ::= CertificateList
+
+    CertificateList ::= SEQUENCE {
+        crlToSign           CRLToSign,
+        algorithmIdentifier AlgorithmIdentifier,
+        signatureValue      BIT STRING
+    }
+
+    CRLToSign ::= SEQUENCE {
+        version           Version OPTIONAL, -- if present, version must be v2
+        signature         AlgorithmIdentifier,
+        issuer            Name,
+        thisUpdate        Time,
+        nextUpdate        Time OPTIONAL,
+        revokedCertificates   SEQUENCE OF SEQUENCE {
+              userCertificate      CertificateSerialNumber,
+              revocationDate       Time,
+              crlEntryExtensions   Extensions OPTIONAL } OPTIONAL,
+        crlExtensions   [0]  Extensions OPTIONAL
+    }
+
 ### signerInfos
 
     Set of SignerInfo
@@ -120,6 +141,8 @@ PKCS#7 signedData library for php.
 [Go pkcs7](https://godoc.org/github.com/fullsailor/pkcs7)
 
 [PKCS7 OID](http://www.alvestrand.no/objectid/1.2.840.113549.1.7.html)
+
+[Apple](https://opensource.apple.com/source/Security/Security-55471/libsecurity_asn1/asn1/sm_x509af.asn)
 
 # Licence
 
