@@ -54,10 +54,6 @@ PKCS#7 signedData library for php.
         signature Signature 
     }
 
-    SignatureAlgorithmIdentifier ::= AlgorithmIdentifier
-
-    Signature ::= BIT STRING
-
     ExtendedCertificateInfo ::= SEQUENCE {
         version CMSVersion,
         certificate Certificate,
@@ -65,6 +61,15 @@ PKCS#7 signedData library for php.
     }
 
     UnauthAttributes ::= SET SIZE (1..MAX) OF Attribute
+
+    Attribute ::= SEQUENCE {
+        attrType OBJECT IDENTIFIER,
+        attrValues SET OF AttributeValue
+    }
+
+    SignatureAlgorithmIdentifier ::= AlgorithmIdentifier
+
+    Signature ::= BIT STRING
 
 ### crls
 
@@ -99,6 +104,8 @@ PKCS#7 signedData library for php.
 # Reference
 
 [RFC2315](https://www.ietf.org/rfc/rfc2315.txt)
+
+[RFC3852](https://www.ietf.org/rfc/rfc3852.txt)
 
 [RFC5652](https://tools.ietf.org/html/rfc5652#section-5.3)
 
