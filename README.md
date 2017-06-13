@@ -67,6 +67,8 @@ PKCS#7 signedData library for php.
         attrValues SET OF AttributeValue
     }
 
+    AttributeValue ::= ANY
+
     SignatureAlgorithmIdentifier ::= AlgorithmIdentifier
 
     Signature ::= BIT STRING
