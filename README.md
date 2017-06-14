@@ -103,14 +103,16 @@ PKCS#7 signedData library for php.
     Set of SignerInfo
 
     SignerInfo ::= SEQUENCE {
-        version CMSVersion,
-        sid SignerIdentifier,
+        version Version,
+        issuerAndSerialNumber IssuerAndSerialNumber,
         digestAlgorithm DigestAlgorithmIdentifier,
-        signedAttrs [0] IMPLICIT SignedAttributes OPTIONAL,
-        signatureAlgorithm SignatureAlgorithmIdentifier,
-        signature SignatureValue,
-        unsignedAttrs [1] IMPLICIT UnsignedAttributes OPTIONAL
+        authenticatedAttributes [0] IMPLICIT Attributes OPTIONAL,
+        digestEncryptionAlgorithm DigestEncryptionAlgorithmIdentifier,
+        encryptedDigest EncryptedDigest,
+        unauthenticatedAttributes [1] IMPLICIT Attributes OPTIONAL
     }
+
+   EncryptedDigest ::= OCTET STRING
 
 # Install
 
