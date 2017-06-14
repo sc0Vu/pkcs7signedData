@@ -112,7 +112,12 @@ PKCS#7 signedData library for php.
         unauthenticatedAttributes [1] IMPLICIT Attributes OPTIONAL
     }
 
-   EncryptedDigest ::= OCTET STRING
+    IssuerAndSerialNumber ::= SEQUENCE {
+       issuer Name,
+       serialNumber CertificateSerialNumber
+    }
+
+    EncryptedDigest ::= OCTET STRING
 
 # Install
 
