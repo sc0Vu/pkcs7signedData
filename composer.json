@@ -1,5 +1,5 @@
 {
-    "name": "guancheng/pkcs7sign",
+    "name": "guancheng/signeddata",
     "description": "The pkcs7 signed data package.",
     "keywords": ["pkcs7", "signeddata", "crypto"],
     "license": "MIT",
