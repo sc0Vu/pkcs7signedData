@@ -111,6 +111,14 @@ PKCS#7 signedData library for php.
         encryptedDigest EncryptedDigest,
         unauthenticatedAttributes [1] IMPLICIT Attributes OPTIONAL
     }
+    
+    Attributes ::= SET OF Attribute
+
+    Attribute ::= SEQUENCE 
+    {
+       type       EncodedObjectID,
+       values     AttributeSetValue
+    }
 
     IssuerAndSerialNumber ::= SEQUENCE {
        issuer Name,
@@ -150,6 +158,8 @@ PKCS#7 signedData library for php.
 [PKCS7 OID](http://www.alvestrand.no/objectid/1.2.840.113549.1.7.html)
 
 [Apple](https://opensource.apple.com/source/Security/Security-55471/libsecurity_asn1/asn1/sm_x509af.asn)
+
+[Microsoft](https://msdn.microsoft.com/zh-tw/library/windows/desktop/aa379079.aspx)
 
 # Licence
 
